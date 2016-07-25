@@ -19,7 +19,11 @@ clf = LDA()
 y_pred = clf.fit(X_train, y_train).predict(X_test)
 symbol = 'CSI300'
 start_test = datetime(2016, 1, 1)
+<<<<<<< HEAD
 end_period = datetime(2016, 7, 21)
+=======
+end_period = datetime(2016, 7, 22)
+>>>>>>> bb4464858cd89f8ea2fde41416be812c0320d72c
 bars = HS300[['Open','AdjClose']]
 bars = bars[start_test:end_period]
 
