@@ -16,7 +16,7 @@ all_codes = ts.get_today_all()
 all_codes = all_codes['code'].values
 result = []
 for code in all_codes:
-    Train = getStock_C(code)
+    Train = getStock_C(code, '2005-01-01', '2016-07-22')
     if len(Train) < 2000:
         continue
     else:
