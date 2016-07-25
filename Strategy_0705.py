@@ -5,7 +5,8 @@ import pandas as pd
 import xlsxwriter
 
 
-all_codes = All_code
+all_codes = pd.read_csv('SH_A_CODES.xlsx')
+all_codes = list(all_codes[0].values)
 result = []
 for code in all_codes:
     data = ts.get_hist_data(code, start='2016-06-05', end='2016-07-18')
