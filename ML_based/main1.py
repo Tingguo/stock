@@ -8,17 +8,16 @@ import pandas as pd
 from sklearn.discriminant_analysis import LinearDiscriminantAnalysis as LDA
 from pylab import *
 from datetime import datetime
-import xlsxwriter
-from bs4 import BeautifulSoup
+import tushare as ts
 
 # get all codes
-execfile('/home/opuser/git-repos/stock/getALLcodes.py')
+all_codes = ts.get_today_all()
 # all_codes = pd.read_csv('SH_A_CODES.xlsx')
-all_codes = All_code
+all_codes = all_codes['code'].values
 result = []
 for code in all_codes:
     Train = getStock_C(code)
-    if len(HS300) < 2000:
+    if len(Train) < 2000:
         continue
     else:
         Train = addFeatures(Train)
